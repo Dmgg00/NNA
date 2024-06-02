@@ -16,3 +16,23 @@ void mover_vertical(robot objetivo, int movimiento)
     ausencia de movimiento */
     objetivo.cord_i+=movimiento;
 }
+
+int Sensor(int object_coord_n,int object_coord_m, int map[n][m], int sensor_return[4])
+{
+    if (map[object_coord_n][object_coord_m-1]=-1)
+    {
+        sensor_return[0]=0;
+    }
+    else if (map[object_coord_n][object_coord_m-2]=-1)
+    {
+        sensor_return[0]=1;
+    }
+    if (map[object_coord_n+1][object_coord_m]=-1)
+    {
+        sensor_return[1]=0;
+    }
+    else if (map[object_coord_n+2][object_coord_m]=-1)
+    {
+        sensor_return[1]=1;
+    }
+}
