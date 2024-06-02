@@ -16,9 +16,9 @@ typedef struct
     int genotipo[96];
 } robot;
 
-#include "f_cuerpo.h"
-#include "f_other.h"
-#include "f_map.h"
+#include "../Functions/f_cuerpo.h"
+#include "../Functions/f_other.h"
+#include "../Functions/f_map.h"
 
 int main(void)
 {
