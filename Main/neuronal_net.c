@@ -14,6 +14,7 @@ typedef struct
     int fitness;
     double fenotipo[12];
     int genotipo[96];
+    int sensor_valors[4];
 } robot;
 
 #include "../Functions/f_cuerpo.h"
@@ -37,6 +38,7 @@ int main(void)
         generate_map(map);
         map[Robots[i].cord_i][Robots[i].cord_j]=1;
         print_map(map);
+
     }
 
     /**********************************************************************/
