@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <unistd.h>
 #define n 50 //map height
 #define m 100 // map large
 #define n_robots 50
@@ -28,18 +29,17 @@ int main(void)
     este ciclo y guardandolo en una matriz de robots*/
     srand(time(NULL));
     robot Robots[n_robots];
-    for (int i = 0; i < n_robots; i++)
-    {
+    
         robot nuevo;
         nuevo.cord_i = (rand() % n-1)+1;
         nuevo.cord_j = (rand() % m-1)+1;
-        Robots[i] = nuevo;
+        Robots[0] = nuevo;
         int map[n][m];
         generate_map(map);
-        map[Robots[i].cord_i][Robots[i].cord_j]=1;
+        map[Robots[0].cord_i][Robots[0].cord_j]=1;
         print_map(map);
-
-    }
+        printf("\n(%d,%d)\n", Robots[0].cord_i, Robots[0].cord_j);
+        Sensor(Robots[0].cord_i,Robots[0].cord_j, map , Robots[0].sensor_valors);
 
     /**********************************************************************/
 

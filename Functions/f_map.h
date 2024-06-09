@@ -32,7 +32,7 @@ void print_map(int arr[n][m])
         {
             if (arr[i][j] == 0)
             {
-                printf(" ");
+                printf("◻");
             }
             else if (arr[i][j] == -1)
             {
@@ -44,7 +44,7 @@ void print_map(int arr[n][m])
             }
             else if (arr[i][j]==1)
             {
-                printf("🤖");
+                printf("🟥");
             }
         }
         printf("\n");
