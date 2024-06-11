@@ -24,7 +24,7 @@ double sigmoide(double x)
 
 int piso(double x)
 {
-    if (x>= (double)1.2)
+    if (x>= (double)1.09)
     {
         return 1;
     } else {
