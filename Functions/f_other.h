@@ -1,3 +1,6 @@
+#define EULER_NUMBER 2.71828
+
+double sigmoide(double x);
 int prob(double percent);
 
 int prob(double percent) // recordar que esta funcion usa -lm para compilar
@@ -12,4 +15,19 @@ int prob(double percent) // recordar que esta funcion usa -lm para compilar
     {
         return 0;
     }
+}
+
+double sigmoide(double x) 
+{
+    return (1 / (1 + pow(EULER_NUMBER, -x)));
+}
+
+int piso(double x)
+{
+    if (x>= (double)1.2)
+    {
+        return 1;
+    } else {
+        return 0;
+    }    
 }
