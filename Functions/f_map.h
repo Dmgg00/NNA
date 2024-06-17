@@ -41,7 +41,7 @@ void generate_map(int a0[n][m], robot target)
             if (a0[i][j]==0)
             {
                 int diametro = sqrt(((j - luz_j) * (j - luz_j)) + ((i - luz_i) * (i - luz_i)));
-                if (diametro <= 2)//el numerito es que tan grande es el randiante gg
+                if (diametro <= 1)//el numerito es que tan grande es el randiante 
                 {
                     a0[i][j] = (diametro - 100) * (-1);
                 }

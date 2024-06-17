@@ -1,8 +1,8 @@
 robot motores_h(robot target, int señales[4]);
-void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor_return[4]);
+void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor_return[5]);
 robot motores_v(robot target, int señales[4]);
 
-void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor_return[4])
+void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor_return[5])
 {
 
     // printf("\n(%d,%d)\n", object_coord_n, object_coord_m);
@@ -56,6 +56,7 @@ void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor
     sensor_return[1] = sensor_return[1] / t;
     sensor_return[2] = sensor_return[2] / t;
     sensor_return[3] = sensor_return[3] / t;
+    sensor_return[4] = (sigmoide(map[object_coord_n][object_coord_m]))*-1;
 
     // printf("\n sesor i arr = %f\n", sensor_return[0]);
     // printf("\n sesor i abaj = %f\n", sensor_return[1]);

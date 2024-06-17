@@ -22,9 +22,14 @@ double sigmoide(double x)
     return (1 / (1 + pow(EULER_NUMBER, -x)));
 }
 
+double mod_sigmoide(double x)
+{
+    return ((1 / ((double)0,5 + pow(EULER_NUMBER, -x)))-1);
+}
+
 int piso(double x)
 {
-    if (x>= (double)1.09)
+    if (x>= (double)1)
     {
         return 1;
     } else {
