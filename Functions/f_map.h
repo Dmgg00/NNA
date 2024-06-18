@@ -21,9 +21,9 @@ void generate_map(int a0[n][m], robot target)
             }
             else if (i==luz_i&&j==luz_j)
             {
-                a0[i][j]=50;
+                a0[i][j]=1;
             }
-            else if (prob(22))
+            else if (prob(8))
             {
                 a0[i][j] = -1;
             }
@@ -43,7 +43,7 @@ void generate_map(int a0[n][m], robot target)
                 int diametro = sqrt(((j - luz_j) * (j - luz_j)) + ((i - luz_i) * (i - luz_i)));
                 if (diametro <= 1)//el numerito es que tan grande es el randiante 
                 {
-                    a0[i][j] = (diametro - 100) * (-1);
+                    a0[i][j] = 1;
                 }
             }
             
@@ -65,7 +65,7 @@ void print_map(int arr[n][m], robot object)
             {
                 printf("⬛");
             }
-            else if (arr[i][j] > 1)
+            else if (arr[i][j] == 1)
             {
                 printf("🟧");
             }

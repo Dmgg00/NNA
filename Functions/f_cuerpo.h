@@ -1,6 +1,5 @@
-robot motores_h(robot target, int señales[4]);
 void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor_return[5]);
-robot motores_v(robot target, int señales[4]);
+robot motores(robot target, int señales[2]);
 
 void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor_return[5])
 {
@@ -56,7 +55,7 @@ void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor
     sensor_return[1] = sensor_return[1] / t;
     sensor_return[2] = sensor_return[2] / t;
     sensor_return[3] = sensor_return[3] / t;
-    sensor_return[4] = (sigmoide(map[object_coord_n][object_coord_m]))*-1;
+    sensor_return[4] = (map[object_coord_n][object_coord_m])*-1;
 
     // printf("\n sesor i arr = %f\n", sensor_return[0]);
     // printf("\n sesor i abaj = %f\n", sensor_return[1]);
@@ -64,34 +63,29 @@ void Sensor(int object_coord_n, int object_coord_m, int map[n][m], double sensor
     // printf("\n sesor j izqu = %f\n", sensor_return[3]);
 }
 
-robot motores_v(robot target, int señales[4])
+robot motores(robot target, int señales[2])
 {
     robot modificado = target;
 
-    if (señales[2] == 1)
-    {
-        modificado.cord_j++;
-    }
-
-    if (señales[3] == 1)
-    {
-        modificado.cord_j--;
-    }
-
-    return modificado;
-}
-
-robot motores_h(robot target, int señales[4])
-{
-    robot modificado = target;
-    if (señales[0] == 1)
+    if (señales[0] == 1 && señales[1]==1)
     {
         modificado.cord_i--;
     }
 
-    if (señales[1] == 1)
+    if (señales[0] == 1 && señales[1]==0)
     {
-        modificado.cord_i++;
+        modificado.cord_j--;
     }
+
+    if (señales[0] == 0 && señales[1]==1)
+    {
+        modificado.cord_j++;
+    }
+
+    if (señales[0] == 0 && señales[1]==0)
+    {
+        modificado.cord_i--;
+    }
+
     return modificado;
 }
